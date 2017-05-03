@@ -3,8 +3,12 @@
   "version": "0.0.1",
   "description": "A projet to show wekfloes",
   "repository": {
-    "type": 'git',
-    "url": '?.git'
+    "type": "git",
+    "url": "?.git"
+  },
+  "author": "Luis Trindade",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.8"
   }
-  "author": "Luis Trindade"
 }
