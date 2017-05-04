@@ -12,7 +12,7 @@ var jsSources = [
     'components/scripts/tagline.js',
     'components/scripts/templates.js'
 ];
-var sassSources = ['components/sass/style.css'];
+var sassSources = ['components/sass/style.scss'];
 
 gulp.task('coffee', function () {
     gulp.src(coffeeSources)
@@ -36,8 +36,13 @@ gulp.task('compass', function(){
             image:  'builds/development/images',
             style:  'expanded'
         }).on('error', gutil.log))
-        .pipe(browserify())
         .pipe(gulp.dest('builds/development/css'))
 });
 
 gulp.task('default',['coffee','js','compass']);
+
+gulp.task('watch', function(){
+    gulp.watch(coffeeSources,['coffee']);
+    gulp.watch(jsSources,['js']);
+    gulp.watch('components/sass/*.scss',['compass']);
+})
